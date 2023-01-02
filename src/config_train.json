@@ -1,0 +1,47 @@
+{
+"general": 
+	{
+		"base_model": "dncnn",
+		"name_conv": "model",
+		"mode": "grayscale",
+		"patch_size": 80,
+		"batch_size": 16,
+		"num_batches": 12800,
+		"channels": 1,
+		"sigma": [25],
+		"augmentation": true
+	},
+"model":
+	{
+		"residual_learning": true,
+		"sub_residual_learning": true,
+		"block": "SelfSim",
+		"depth": 18,
+		"num_filters": 64,
+		"kernel_size": 3,
+		"weight_decay": 1e-6,
+		"Norm": "Bnorm",
+		"NormParams": [0.5],
+		"scale": 2
+	},
+"SelfSimBlocks":
+	{
+		"shift_pad":"reflect",
+	   	"block_pos":[6,12],
+		"block_model":"outer",
+		"hnsz":[15],
+		"stride":[5],
+		"weight_decay":0,
+		"Norm": "Bnorm",
+		"NormParams": [0.5],
+		"patch_folding_size": 1
+	},
+"training":
+	{
+		"init_lr": 1e-4,
+		"epochs": 40,
+		"loss": "l2",
+		"ckpt_freq_epochs": 1,
+		"other": null
+	}
+}

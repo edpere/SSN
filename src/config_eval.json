@@ -1,0 +1,26 @@
+{
+	"base_model": "dncnn",
+	"scale": 2,
+	"mode": "grayscale",
+	"sigmas": [25],
+	"residual_learning": "add",
+	"sub_residual_learning": "add",
+	"num_filters": 64,
+	"kernel_size": 3,
+	"block": "SelfSim",
+	"depth": 18,
+	"Norm": "Bnorm",
+	"NormParams": [0.99],
+
+	"SelfSimBlocks":
+	{
+		"shift_pad":"reflect",
+	   	"block_pos":[6,12],
+		"block_model":"outer",
+		"hnsz":[15],
+		"stride":[5],
+		"Norm": "Bnorm",
+		"NormParams": [0.99],
+		"patch_folding_size": 1
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"mode": "grayscale",	
+	"patch_size": 80,
+	"batch_size": 8,
+	"num_batches": 25600
+}	
